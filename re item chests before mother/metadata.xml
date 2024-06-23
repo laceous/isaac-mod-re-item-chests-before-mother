@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <name>Re: Item Chests Before Mother</name>
+    <directory>re item chests before mother</directory>
+    <id>3273357607</id>
+    <description>Doesn't this already exist? [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499739713]Yes[/url]
+
+This mod requires REPENTOGON. It uses a newer Repentogon API that properly supports Guppy's Eye.
+
+The room before Mother will contain 4 golden chests with treasure room items inside. If you have The Left Hand trinket then you'll get devil room items instead, and have to pay for them.</description>
+    <version>1.1</version>
+    <visibility>Public</visibility>
+    <tag id="Lua"/>
+    <tag id="Rooms"/>
+    <tag id="Bosses"/>
+    <tag id="Tweaks"/>
+</metadata>
