@@ -5,7 +5,8 @@ if REPENTOGON then
   mod.rngShiftIdx = 35
   
   function mod:onNewRoom()
-    local room = game:GetRoom()
+    local level = game:GetLevel()
+    local room = level:GetCurrentRoom()
     
     if mod:isHoleRoom() and
        room:IsFirstVisit() and
@@ -21,7 +22,8 @@ if REPENTOGON then
         -- game:Spawn w/ seed over Isaac.Spawn for consistency with glowing hourglass
         -- can sometimes spawn PICKUP_ETERNALCHEST/PICKUP_MEGACHEST, or PICKUP_REDCHEST with the left hand trinket
         -- pass ChestSubType.CHEST_CLOSED if you want to force locked chests over red chests
-        game:Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_LOCKEDCHEST, room:GetGridPosition(v), Vector.Zero, nil, 0, rng:Next())
+        local chestVariant = level:GetStateFlag(LevelStateFlag.STATE_SATANIC_BIBLE_USED) and PickupVariant.PICKUP_REDCHEST or PickupVariant.PICKUP_LOCKEDCHEST
+        game:Spawn(EntityType.ENTITY_PICKUP, chestVariant, room:GetGridPosition(v), Vector.Zero, nil, 0, rng:Next())
       end
     end
   end
