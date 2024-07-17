@@ -13,6 +13,7 @@ if REPENTOGON then
        room:IsClear()
     then
       local rng = RNG(room:GetSpawnSeed(), mod.rngShiftIdx)
+      local chestVariant = level:GetStateFlag(LevelStateFlag.STATE_SATANIC_BIBLE_USED) and PickupVariant.PICKUP_REDCHEST or PickupVariant.PICKUP_LOCKEDCHEST
       
       for _, v in ipairs({ 34, 40, 94, 100 }) do
         for i = 1, v do
@@ -22,7 +23,6 @@ if REPENTOGON then
         -- game:Spawn w/ seed over Isaac.Spawn for consistency with glowing hourglass
         -- can sometimes spawn PICKUP_ETERNALCHEST/PICKUP_MEGACHEST, or PICKUP_REDCHEST with the left hand trinket
         -- pass ChestSubType.CHEST_CLOSED if you want to force locked chests over red chests
-        local chestVariant = level:GetStateFlag(LevelStateFlag.STATE_SATANIC_BIBLE_USED) and PickupVariant.PICKUP_REDCHEST or PickupVariant.PICKUP_LOCKEDCHEST
         game:Spawn(EntityType.ENTITY_PICKUP, chestVariant, room:GetGridPosition(v), Vector.Zero, nil, 0, rng:Next())
       end
     end
