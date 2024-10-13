@@ -17,7 +17,7 @@ if REPENTOGON then
       
       for _, v in ipairs({ 34, 40, 94, 100 }) do
         for i = 1, v do
-          rng:Next() -- skip numbers to better deal with 2 items in PICKUP_MEGACHEST, we could also different shift indexes
+          rng:Next() -- skip numbers to better deal with 2 items in PICKUP_MEGACHEST, we could also use different shift indexes
         end
         
         -- game:Spawn w/ seed over Isaac.Spawn for consistency with glowing hourglass
