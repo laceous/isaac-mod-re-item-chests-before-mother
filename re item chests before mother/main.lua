@@ -83,6 +83,7 @@ if REPENTOGON then
       
       if room:GetType() == RoomType.ROOM_BOSS and
          room:GetRoomShape() == RoomShape.ROOMSHAPE_1x1 and
+         roomDesc.Data.StageID == StbType.SPECIAL_ROOMS and
          roomDesc.Data.Variant == 6000 -- Name == 'Mother', Subtype == 88
       then
         local gridEntity = room:GetGridEntityFromPos(room:GetCenterPos()) -- 67
